@@ -1,0 +1,318 @@
+/* ======================
+   BASE: MOBILE FIRST
+   ====================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --anuncio: #d8d6d6;
+    --text: #29363D;
+    --main-color: #ffffff;
+    --green-btn: #37b19e;
+    --gray-btn: #bdbbbb;
+    --blue-accent: #3498db;
+}
+
+body {
+    background-color: var(--main-color);
+    font-family: Arial, sans-serif;
+}
+
+/* --------- CONTENIDO --------- */
+.main_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    bottom: 50px;
+}
+
+/* Por defecto, oculta pedidos y chat (solo para móvil/tablet) */
+@media (max-width: 1023px) {
+    .main_container .mensajes_noti:nth-of-type(2),
+    .main_container .conversacion {
+        display: none;
+    }
+
+    /* Mostrar Bandeja de Pedidos (solo para móvil/tablet) */
+    .main_container.show-pedidos .mensajes_noti:nth-of-type(1) {
+        display: none;
+    }
+    .main_container.show-pedidos .mensajes_noti:nth-of-type(2) {
+        display: block;
+        top: 25px;
+        position: relative;
+    }
+
+    /* Mostrar Chat (solo para móvil/tablet) */
+    .main_container.show-chat .mensajes_noti {
+        display: none;
+    }
+    .main_container.show-chat .conversacion {
+        display: flex;
+        top: 25px;
+    }
+}
+
+.mensajes_noti {
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    overflow-y: auto;
+}
+
+.conversacion {
+    flex-direction: column;
+    background-color: white;
+    height: calc(100vh - 200px);
+    top: 12px;
+    position: relative;
+}
+
+/* --------- MENSAJES Y BOTONES --------- */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mensajes,
+.notificaciones {
+    background-color: #e4e2e2;
+    border-radius: 10px;
+    padding: 6px 16px;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+.mensajes.active,
+.notificaciones.active {
+    background-color: var(--blue-accent);
+    color: white;
+}
+
+.bandeja {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    border-left: 1px solid #e0e0e0;
+}
+
+/* --------- PRODUCTOS --------- */
+.imagen_precio {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+
+.imagen_precio img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info .titulo {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: var(--text);
+}
+
+.product-info .precio {
+    font-size: 13px;
+    color: #777;
+}
+
+/* --------- ENCABEZADOS --------- */
+.inicio {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.inicio p,
+.user p {
+    font-size: 14px;
+    color: var(--text);
+    margin-left: 10px;
+}
+
+.titulo_chat {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 16px;
+}
+
+/* --------- ENVIAR MENSAJE --------- */
+.enviar {
+    display: flex !important;
+    align-items: center;
+    position: fixed;
+    bottom: 70px;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #e0e0e0;
+}
+
+.enviar input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.enviar button {
+    background: none;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* --------- ICONO USUARIO --------- */
+.bx.bxs-user {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    color: #29363D;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ======================
+   TABLET (≥768px)
+   ====================== */
+@media (min-width: 768px) {
+    .main_container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .mensajes_noti {
+        width: 100%;
+        max-width: 100%;
+        border-right: none;
+    }
+
+    .conversacion {
+        display: none;
+    }
+
+    .main_container.show-chat .mensajes_noti {
+        display: none;
+    }
+
+    .main_container.show-chat .conversacion {
+        display: flex;
+    }
+
+    .botones {
+        display: flex;
+    }
+
+    .enviar {
+        display: flex !important;
+        position: fixed;
+        bottom: 72px;
+        width: 100%;
+    }
+}
+
+/* ======================
+   ESCRITORIO (≥1024px)
+   ====================== */
+@media (min-width: 1024px) {
+    .main_container {
+        flex-direction: row;
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 20px 10px;
+        padding-bottom: 180px;
+        height: auto;
+        top: 70px;
+    }
+
+    .mensajes_noti {
+        width: 40%;
+        max-width: 400px;
+        border-right: 1px solid #e0e0e0;
+    }
+
+    .conversacion {
+        display: flex !important;
+        flex: 1;
+        flex-direction: column;
+        height: calc(100vh - 180px);
+    }
+
+    .imagen_precio {
+        cursor: default;
+        pointer-events: none;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .imagen_precio:hover {
+        background-color: transparent;
+    }
+
+    .imagen_precio img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .enviar {
+        position: relative;
+        margin-top: auto;
+        padding: 15px;
+        width: 100%;
+        border-top: 1px solid #e0e0e0;
+        background-color: white;
+        bottom: auto;
+    }
+
+    .botones {
+        top: 12px;
+        position: relative;
+    }
+    .bandeja{
+        position: relative;
+        top: 12px;
+    }
+
+    .bx.bxs-user {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4rem;
+    }
+}
