@@ -1,6 +1,6 @@
 
 function loadHeader() {
-    return fetch('../Inicio/Inicio.html')
+    return fetch('Inicio/Inicio.html')
         .then(res => res.text())
         .then(html => {
             const temp = document.createElement('div');
