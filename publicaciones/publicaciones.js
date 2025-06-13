@@ -118,21 +118,18 @@ function loadHeader() {
             const temp = document.createElement('div');
             temp.innerHTML = html;
 
-            // Cargar header
             const header = temp.querySelector('header');
             const headerContainer = document.getElementById('header-container');
             if (header && headerContainer) {
                 headerContainer.appendChild(header);
             }
 
-            // Cargar bienvenida
             const bienvenida = temp.querySelector('.bienvenida_contenedor');
             const bienvenidaContainer = document.getElementById('bienvenida-container');
             if (bienvenida && bienvenidaContainer) {
                 bienvenidaContainer.appendChild(bienvenida);
             }
 
-            // Fuentes (si aún no están cargadas)
             if (!document.querySelector('link[href*="Material+Icons"]')) {
                 const link1 = document.createElement('link');
                 link1.rel = 'stylesheet';
@@ -147,16 +144,14 @@ function loadHeader() {
                 document.head.appendChild(link2);
             }
 
-            // Cargar CSS del header
             const headerCss = document.createElement('link');
             headerCss.rel = 'stylesheet';
-            headerCss.href = '/Inicio/inicio.css';
+            headerCss.href = 'Inicio/inicio.css';
             document.head.appendChild(headerCss);
 
-            // Cargar JS del header y luego continuar
             return new Promise((resolve) => {
                 const headerJs = document.createElement('script');
-                headerJs.src = '/Inicio/Inicio.js';
+                headerJs.src = 'Inicio/Inicio.js';
                 headerJs.onload = () => {
                     if (typeof initHeader === 'function') {
                         initHeader();
