@@ -4,7 +4,7 @@ const departamentos = {
     'CH': 'Chuquisaca', 'BN': 'Beni', 'PD': 'Pando'
 };
 function loadHeader() {
-    return fetch('../Inicio/Inicio.html')
+    return fetch('Inicio/Inicio.html')
         .then(res => res.text())
         .then(html => {
             const temp = document.createElement('div');
@@ -80,7 +80,6 @@ function displayAnuncioDetails(anuncio) {
     }
 }
 
-//  Inicialización 
 document.addEventListener('DOMContentLoaded', function () {
     loadHeader().then(() => {
         const urlParams = new URLSearchParams(window.location.search);
