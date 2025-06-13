@@ -3,3 +3,4 @@
 
 
 Ingeniero nose porque no me carga el js pero cuando lo descargo si da bien 
+nose si lo pueda descargar porfa asi si da funiona todo 
