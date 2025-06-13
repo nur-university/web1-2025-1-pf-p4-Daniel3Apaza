@@ -105,7 +105,7 @@ function loadHeaderScript() {
         if (oldScript) oldScript.remove();
 
         const headerJs = document.createElement('script');
-        headerJs.src = '/Inicio/Inicio.js?' + new Date().getTime();
+        headerJs.src = 'Inicio/Inicio.js?' + new Date().getTime();
         headerJs.onload = () => {
             if (typeof initHeader === 'function') initHeader();
             resolve();
