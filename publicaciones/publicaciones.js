@@ -112,7 +112,7 @@ function getUserInSession() {
 }
 
 function loadHeader() {
-    return fetch('../Inicio/Inicio.html')
+    return fetch('Inicio/Inicio.html')
         .then(res => res.text())
         .then(html => {
             const temp = document.createElement('div');
@@ -177,6 +177,7 @@ function loadHeader() {
             }
         });
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
     loadHeader().then(() => {
