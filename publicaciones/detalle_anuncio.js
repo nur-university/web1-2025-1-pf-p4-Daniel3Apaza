@@ -81,7 +81,6 @@ function displayAnuncioDetails(anuncio) {
     }
 }
 
-//  Inicialización 
 document.addEventListener('DOMContentLoaded', function () {
     loadHeader().then(() => {
         const urlParams = new URLSearchParams(window.location.search);
