@@ -102,7 +102,7 @@ function setupProductEvents() {
         producto.addEventListener('click', () => {
             const id = producto.getAttribute('data-id');
             if (id) {
-                window.location.href = '../publicaciones/detalle_anuncio.html?id=' + id;
+                window.location.href = '/publicaciones/detalle_anuncio.html?id=' + id;
             }
         });
     });
