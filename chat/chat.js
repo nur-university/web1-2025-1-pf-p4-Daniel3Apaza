@@ -11,7 +11,7 @@ function loadHeader() {
                 id: 'material-symbols'
             },
             { 
-                url: '/Inicio/inicio.css',
+                url: 'Inicio/inicio.css',
                 id: cssId 
             }
         ];
@@ -68,7 +68,7 @@ function loadHeader() {
 }
 
 function loadHeaderHtml() {
-    return fetch('../Inicio/Inicio.html?' + new Date().getTime()) 
+    return fetch('Inicio/Inicio.html?' + new Date().getTime()) 
         .then(res => {
             if (!res.ok) throw new Error('Network response was not ok');
             return res.text();
@@ -101,7 +101,7 @@ function loadHeaderHtml() {
 
 function loadHeaderScript() {
     return new Promise((resolve) => {
-        const oldScript = document.querySelector('script[src="/Inicio/Inicio.js"]');
+        const oldScript = document.querySelector('script[src="Inicio/Inicio.js"]');
         if (oldScript) oldScript.remove();
 
         const headerJs = document.createElement('script');
