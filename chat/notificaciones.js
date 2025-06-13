@@ -34,12 +34,12 @@ function loadHeader() {
 
             const headerCss = document.createElement('link');
             headerCss.rel = 'stylesheet';
-            headerCss.href = '/Inicio/inicio.css';
+            headerCss.href = 'Inicio/inicio.css';
             document.head.appendChild(headerCss);
 
             return new Promise((resolve) => {
                 const headerJs = document.createElement('script');
-                headerJs.src = '/Inicio/Inicio.js';
+                headerJs.src = 'Inicio/Inicio.js';
                 headerJs.onload = () => {
                     if (typeof initHeader === 'function') {
                         initHeader();
