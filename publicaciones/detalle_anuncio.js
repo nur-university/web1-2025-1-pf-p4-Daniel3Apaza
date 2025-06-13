@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const anuncioId = urlParams.get('id');
 
         if (!anuncioId) {
-            window.location.href = '../Index.html';
+            window.location.href = '/Index.html';
             return;
         }
 
